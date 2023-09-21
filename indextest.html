@@ -1,0 +1,97 @@
+<html>
+<head>
+<title> Formulario de Matricula </title>
+<script type="text/javascript">
+function validar()
+{ 
+var n = document.formulario.pnome.value;
+var sn = document.formulario.snome.value;
+var em = document.formulario.email.value;
+var em = document.formulario.cpf.value;
+var em = document.formulario.hora.value;
+var tel = document.formulario.tel.value;
+if(n=="")
+{
+alert('O campo nome está vazio');
+document.formulario.pnome.focus();
+}
+else if(sn=="")
+{
+alert('O campo sobrenome está vazio');
+document.formulario.snome.focus();
+}
+else if(em=="")
+{
+alert('O campo e-mail está vazio');
+document.formulario.email.focus();
+}
+else if(em=="")
+{
+alert('O campo CPF está vazio');
+document.formulario.cpf.focus();
+}
+else if(em=="")
+{
+alert('O campo hora está vazio');
+document.formulario.hora.focus();
+}
+else if(tel=="")
+{
+alert('O campo telefone está vazio');
+document.formulario.telefone.focus();
+}
+}
+</script>
+</head>
+<body>
+<form name="formulario" action="verifica.php" method="get">
+<fieldset>
+<legend> Formulário de Matricula</legend>
+<p>
+<label>
+Nome: <input type="text" name="pnome">
+</label>
+<p>
+<label>
+Sobrenome: <input type="text" name="snome">
+</label>
+</p>
+<p>
+<label>
+E-mail:<input type="text" name="email">
+</label>
+</p>
+<p>
+<label>
+Telefone:<input type="tel" name="telefone" placeholder="(xx) xxxxx-xxxx">
+</label>
+</p>
+<p>
+<label>
+Preferência de horário: <input type="time" name="hora" min="09:00" max="18:00" required />
+</label>
+</p>
+<p>
+<label>
+Digite seu CPF:<input type="text" name="cpf" placeholder="xxx.xxx.xxx-xx" 
+pattern="^\(?\d{2}\)\d{4}.*?$">
+</label>
+</p>
+<p>
+<label>
+Me conte um pouco sobre a sua experiência com o idioma escolhido:<br>
+<textarea cols="30" rows="5"></textarea>
+</label>
+</p>
+<p>
+<button type="button" onclick="alert('Cadastro concluído, entraremos em contato no telefone informado para finalizar a sua matricula.')"> 
+Enviar
+</button>
+<input type="reset" value="Limpar">
+<input type="button" value="Validar Nome" onClick="validar();">
+
+</p>
+</fieldset>
+</form>
+</body>
+</html>
